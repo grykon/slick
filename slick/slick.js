@@ -1055,7 +1055,12 @@
         }
 
         if (_.options.centerMode === true && _.options.infinite === true) {
-            _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) - _.slideWidth;
+            if (_.options.vertical === false) {
+                 _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) - _.slideWidth;
+            }
+            else {
+                 verticalOffset += verticalHeight * Math.floor(_.options.slidesToShow / 2) - verticalHeight;
+            }
         } else if (_.options.centerMode === true) {
             _.slideOffset = 0;
             _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2);
